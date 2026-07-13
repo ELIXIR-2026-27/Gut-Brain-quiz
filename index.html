@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gut-Brain Health Quiz 🧠✨</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Home Screen -->
+        <div id="homeScreen" class="screen active">
+            <div class="animated-background">
+                <div class="gradient-bg"></div>
+                <div class="microbes">
+                    <div class="microbe microbe1">🦠</div>
+                    <div class="microbe microbe2">🧬</div>
+                    <div class="microbe microbe3">💚</div>
+                    <div class="microbe microbe4">✨</div>
+                    <div class="microbe microbe5">🌟</div>
+                    <div class="microbe microbe6">💫</div>
+                </div>
+            </div>
+            <div class="content">
+                <h1 class="title">🧠 Gut-Brain Health Quiz</h1>
+                <p class="subtitle">Discover your lifestyle habits and unlock your wellness potential!</p>
+                <div class="features">
+                    <div class="feature-item">📊 Personalized Scoring</div>
+                    <div class="feature-item">💡 Expert Feedback</div>
+                    <div class="feature-item">🎖️ Digital Certificate</div>
+                </div>
+                <button class="btn btn-primary" onclick="startQuiz()">Start Quiz 🚀</button>
+                <button class="btn btn-secondary" onclick="showInfo()">Learn More 📚</button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="screen">
+            <div class="animated-background">
+                <div class="gradient-bg"></div>
+            </div>
+            <div class="quiz-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="question-counter" id="questionCounter"></div>
+                
+                <div class="question-content">
+                    <h2 id="questionText" class="question"></h2>
+                    <div id="optionsContainer" class="options-container"></div>
+                </div>
+
+                <div class="quiz-navigation">
+                    <button class="btn btn-outline" onclick="previousQuestion()" id="prevBtn" style="display:none;">← Previous</button>
+                    <button class="btn btn-outline" onclick="nextQuestion()" id="nextBtn">Next →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="animated-background">
+                <div class="gradient-bg"></div>
+                <div class="microbes">
+                    <div class="microbe microbe1">🦠</div>
+                    <div class="microbe microbe2">🧬</div>
+                    <div class="microbe microbe3">💚</div>
+                    <div class="microbe microbe4">✨</div>
+                    <div class="microbe microbe5">🌟</div>
+                    <div class="microbe microbe6">💫</div>
+                </div>
+            </div>
+            <div class="results-container">
+                <div class="thank-you-section">
+                    <h1 class="thanks-title">🙏 Thank You!</h1>
+                    <p class="thanks-message">We appreciate you taking the time to understand your wellness journey!</p>
+                </div>
+
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="totalScore" class="score-number">0</span>
+                        <span class="score-text">/100</span>
+                    </div>
+                    <p id="healthStatus" class="health-status"></p>
+                </div>
+
+                <div id="feedbackContainer" class="feedback-container"></div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="downloadCertificate()">📜 Download Certificate</button>
+                    <button class="btn btn-secondary" onclick="generateQRCode()">📱 Share Quiz (QR Code)</button>
+                    <button class="btn btn-outline" onclick="restartQuiz()">🔄 Take Again</button>
+                </div>
+
+                <div id="qrContainer" class="qr-container" style="display:none;">
+                    <h3>Share This Quiz</h3>
+                    <div id="qrCode"></div>
+                    <p>Scan to share with friends!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Screen -->
+        <div id="infoScreen" class="screen">
+            <div class="animated-background">
+                <div class="gradient-bg"></div>
+            </div>
+            <div class="info-container">
+                <button class="btn btn-close" onclick="goHome()">✕</button>
+                <h2>About Gut-Brain Health 🧠</h2>
+                <div id="articlesContainer" class="articles-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden canvas for certificate -->
+    <canvas id="certificateCanvas" style="display:none;"></canvas>
+
+    <script src="quiz-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
